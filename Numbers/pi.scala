@@ -1,5 +1,5 @@
 /*
-  This problem is solved using Scala's language elements, without
+  This problem is solved using Scala language elements, without
   any math algorithm for simplicity's sake.
 */
 import scala.math.Pi
