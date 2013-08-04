@@ -1,6 +1,6 @@
 def fibonacci(value: Int): Int = {
   if(value <= 1)
-    return 1
+    return value;
   else
     fibonacci(value - 1) + fibonacci(value - 2)
 }
