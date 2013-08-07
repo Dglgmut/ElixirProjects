@@ -1,21 +1,16 @@
-var factors: List[Int] = Nil
-def divide(divisibleNumbers: IndexedSeq[Int], number: Int): List[Int] = {
-  if(divisibleNumbers.length > 0){
-    if(number % divisibleNumbers(0) == 0){
-      divide(divisibleNumbers, (number / divisibleNumbers(0)))
-      factors = factors :+ divisibleNumbers(0) 
-      factors
-    }
-    else 
-      divide(divisibleNumbers.tail,number)
+def divide(divisibleNumbers: IndexedSeq[Long], number: Long): List[Long] = {
+  if(number % divisibleNumbers(0) == 0){
+    if(number == divisibleNumbers(0)) // This means it has reached the end of the divisibles
+      List[Long](number)
+    else
+      List[Long](divisibleNumbers(0)) ::: divide(divisibleNumbers, (number / divisibleNumbers(0)))
   }
-  else
-    Nil
+  else 
+    divide(divisibleNumbers.tail,number)
 }
-def factorsFor(number: Int): Unit = {
-  val allNumbersList: Range = (2 to number)
-  val divisibleNumbers = allNumbersList.filter(  i => number % i == 0)
-  println(divide(divisibleNumbers,number))
+def factorsFor(number: Long): List[Long] = {
+  val numbersList = (2L to number)
+  divide(numbersList,number)
 }
 println("Enter a number to see its prime factors")
-factorsFor(readLine().toInt)
+println(factorsFor(readLine().toInt.toLong))
