@@ -1,16 +1,16 @@
-lazy val factors = Nil
-def divide(i: IndexedSeq[Int],o: Int): Int = {
-  if(i.length > 0){
-    if(o % i(0) == 0){
-      println(i(0)) 
-      factors :+ divide(i, (o / i(0)))
-      i(0)
+var factors: List[Int] = Nil
+def divide(divisibleNumbers: IndexedSeq[Int], number: Int): List[Int] = {
+  if(divisibleNumbers.length > 0){
+    if(number % divisibleNumbers(0) == 0){
+      divide(divisibleNumbers, (number / divisibleNumbers(0)))
+      factors = factors :+ divisibleNumbers(0) 
+      factors
     }
     else 
-      divide(i.tail,o)
+      divide(divisibleNumbers.tail,number)
   }
   else
-    0
+    Nil
 }
 def factorsFor(number: Int): Unit = {
   val allNumbersList: Range = (2 to number)
