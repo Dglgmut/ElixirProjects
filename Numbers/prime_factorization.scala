@@ -5,4 +5,5 @@ object PrimeNumbersManipulator {
     elements.filter( i => number % i == 0)
   }
 }
-println(PrimeNumbersManipulator.factorsFor(10))
+println("Enter a number to see its prime factors")
+println(PrimeNumbersManipulator.factorsFor(readLine().toInt))
