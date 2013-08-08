@@ -6,4 +6,4 @@ def readKeyAndPrintNextPrimeNumber(primeNumbers: Range):Range = {
 }
 println("This program will print prime numbers for each key stroke,'Ctrl + c to exit'")
 val console = new tools.jline.console.ConsoleReader()
-readKeyAndPrintNextPrimeNumber(2 to maxValue).filter( i => true)
+readKeyAndPrintNextPrimeNumber(2 to maxValue).filter(i => (2 to maxValue).forall{n => (n == i || i % n > 0)})
