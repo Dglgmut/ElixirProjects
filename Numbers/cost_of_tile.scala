@@ -7,5 +7,5 @@ def multiplyArgs(argsRange: Range): Int = {
 try {
   println(multiplyArgs(0 to 2))
 } catch {
-  case e: ArrayIndexOutOfBoundsException => println("Enter the inputs in  the following order: Price Height Width")
+  case e: ArrayIndexOutOfBoundsException => println("Error: Enter the inputs in  the following order: Price Height Width")
 }
