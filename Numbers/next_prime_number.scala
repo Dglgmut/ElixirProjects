@@ -1,4 +1,4 @@
-val maxValue = 999999999
+val maxValue = 9999
 def readKeyAndPrintNextPrimeNumber(primeNumbers: IndexedSeq[Int]): IndexedSeq[Int] = {
   console.readVirtualKey()
   println(primeNumbers(0))
