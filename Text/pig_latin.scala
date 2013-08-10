@@ -5,6 +5,7 @@ object Pig {
 
   private def startsWithConsonant(word: String): Boolean = consonants.contains(word(0))
   private def startsWithY(word: String): Boolean = word(0) == ('y')
+  private def dividedWord(word: String): String = new StringBuilder(word.splitAt(1)._2) + word(0).toString + "ay"
 
   def latinizer(word: String): String = {
       if(startsWithConsonant(word) || startsWithY(word))
@@ -13,7 +14,6 @@ object Pig {
         (new StringBuilder(word)) + "way"
                 
   }
-  def dividedWord(word: String): String = new StringBuilder(word.splitAt(1)._2) + word(0).toString + "ay"
 }
 
 println("Enter a word to be converted to pig latin")
