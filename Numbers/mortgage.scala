@@ -1,7 +1,6 @@
 // TODO: use an immutable library
 import java.util.Calendar
 import java.text.SimpleDateFormat
-import java.util.Date
 
 var timeNow = Calendar.getInstance
 def sumDateToOutput: String = {
