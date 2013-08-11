@@ -2,7 +2,7 @@
 import java.util.Calendar
 import java.text.SimpleDateFormat
 
-def dateToOutput(date: Calendar): String = new SimpleDateFormat("MMMM yyyy").format(date.getTime)
+def dateToOutput(date: Date): String = new SimpleDateFormat("MMMM yyyy").format(date)
 
 println("Enter the mortgage amount")
 val mortgageAmount: Integer = readLine().toInt
