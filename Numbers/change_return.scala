@@ -1,5 +1,5 @@
 class Coins(coinType: Symbol) {
-  def value: Double = coinTypesDictionary(coinType)
+  def value: Double = Coins.coinTypesDictionary(coinType)
   def toOneDollar: Double = 1.0 / this.value
 }
 object Coins{
