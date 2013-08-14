@@ -5,5 +5,6 @@ class Coins(coinType: Symbol) {
 }
 object Coins{
   private val coinTypesDictionary = Map[Symbol, Double]('penny -> 0.01, 'nickel ->  0.05, 'dime -> 0.10, 'quarter -> 0.25 )
-  def coinTypes: Iterable[Symbol] = coinTypesDictionary.keys
+  def coinTypes: List[Symbol] = coinTypesDictionary.keys.toList
+  def tryChanges(moneyGiven: Double, price: Double): Iterable[Any] =  coinTypes.reverse.map(e => e)
 }
