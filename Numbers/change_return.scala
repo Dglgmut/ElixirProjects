@@ -14,3 +14,10 @@ object Coins{
       Nil
   }
 }
+println("Insert the price")
+print("$")
+val price: Double = readLine().toDouble
+println("Insert how much money was given")
+print("$")
+val moneyGiven: Double = readLine().toDouble
+println(Coins.getChanges(price, moneyGiven))
