@@ -6,5 +6,10 @@ class Coins(coinType: Symbol) {
 object Coins{
   private val coinTypesDictionary = Map[Symbol, Double]('penny -> 0.01, 'nickel ->  0.05, 'dime -> 0.10, 'quarter -> 0.25 )
   def coinTypes: List[Symbol] = coinTypesDictionary.keys.toList
-  def tryChanges(moneyGiven: Double, price: Double): Iterable[Any] =  coinTypes.reverse.map(e => e)
+  def getChanges(moneyGiven: Double, price: Double): Iterable[Any] = {
+    val avaiableCoins = coinTypes.reverse.filter{e => 
+      (new Coins(e)).changeable(moneyGiven,price)}
+    avaiableCoins.last
+  }
 }
+println(Coins.getChanges(30.0, 31.0))
