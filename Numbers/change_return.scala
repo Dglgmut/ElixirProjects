@@ -7,9 +7,9 @@ object Coins{
   private val coinTypesDictionary = Map[Symbol, Double]('penny -> 0.01, 'nickel ->  0.05, 'dime -> 0.10, 'quarter -> 0.25 )
   def coinTypes: List[Symbol] = coinTypesDictionary.keys.toList
   def getChanges(price: Double, moneyGiven: Double): List[Any] = {
-    val avaiableCoins = coinTypes.reverse.filter{e => (new Coins(e)).changeable(price, moneyGiven)}
+    val avaiableCoins = coinTypes.filter{e => (new Coins(e)).changeable(price, moneyGiven)}
     if (avaiableCoins.length > 0 )
-      avaiableCoins.head :: Coins.getChanges(price, moneyGiven - coinTypesDictionary(avaiableCoins.head))
+      avaiableCoins.last :: Coins.getChanges(price, moneyGiven - coinTypesDictionary(avaiableCoins.last))
     else
       Nil
   }
