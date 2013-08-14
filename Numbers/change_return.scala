@@ -1,9 +1,8 @@
 class Coins(coinType: Symbol) {
   def value: Double = Coins.coinTypesDictionary(coinType)
-  def toOneDollar: Double = 1.0 / this.value
+  def toChange(moneyGiven: Double, price: Double): Int = ((price - moneyGiven) / this.value).toInt
 }
 object Coins{
   private val coinTypesDictionary = Map[Symbol, Double]('penny -> 0.01, 'nickel ->  0.05, 'dime -> 0.10, 'quarter -> 0.25 )
   def coinTypes: Iterable[Symbol] = coinTypesDictionary.keys
 }
-println(Coins.coinTypes)
