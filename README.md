@@ -20,7 +20,7 @@ Numbers
 
 [**Binary to Decimal and Back Converter**](https://github.com/kapok/Projects/blob/master/Numbers/binary_converter.scala) - Develop a converter to convert a decimal number to binary or a binary number to its decimal equivalent.
 
-**Calculator** - A simple calculator to do basic operators. Make it a scientific calculator for added complexity.
+[**Calculator**](https://github.com/kapok/Projects/blob/master/Numbers/calculator.scala) - A simple calculator to do basic operators. Make it a scientific calculator for added complexity.
 
 **Unit Converter (temp, currency, volume, mass and more)** - Converts various units between one another. The user enters the type of unit being entered, the type of unit they want to convert to and then the value. The program will then make the conversion.
 
