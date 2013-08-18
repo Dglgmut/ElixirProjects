@@ -1,7 +1,7 @@
 import scala.reflect.runtime.universe._
 import scala.util.matching.Regex
 
-val whiteListOperators = List[String]("+","-","/","%")
+val whiteListOperators = List[String]("+","-","/","%","*")
 val numbersMatcher: Regex = new Regex("\\d+")
 val operatorMatcher: Regex = {
   new Regex(whiteListOperators.map('\\' + _).mkString("|"))
@@ -16,6 +16,6 @@ val operatorAtString: String = operatorMatcher.findAllIn(input).toList(0).toStri
 
   
 //Working reflection <3
-val op =typeOf[Int].declaration(newTermName(operatorAtString).encodedName).asTerm.alternatives(1) // 0 makes the operator behave like string, 1 makes it behave like a number
+val op = typeOf[Int].declaration(newTermName(operatorAtString).encodedName).asTerm.alternatives(2) // 0 makes the operator behave like string, 1 makes it behave like a number
 val result = runtimeMirror(getClass.getClassLoader).reflect(firstNumber).reflectMethod(op.asMethod)(lastNumber)
 println(result)
