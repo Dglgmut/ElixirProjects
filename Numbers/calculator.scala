@@ -10,11 +10,12 @@ val operatorMatcher: Regex = {
 println("Insert an expression for the calculator (e.g. '1 + 1' )")
 val input: String = readLine()
 
-val firstNumbers: Int = numbersMatcher.findAllIn(input).toList(0).toInt
-val lastNumbers: Int = numbersMatcher.findAllIn(input).toList(1).toInt
+val firstNumber: Int = numbersMatcher.findAllIn(input).toList(0).toInt
+val lastNumber: Int = numbersMatcher.findAllIn(input).toList(1).toInt
 val operatorAtString: String = operatorMatcher.findAllIn(input).toList(0).toString
 
   
-//Experimental reflection
-val op = typeOf[Int].declaration(newTermName("/").encodedName).asTerm.alternatives(1)//returns / method
-runtimeMirror(getClass.getClassLoader).reflect(10).reflectMethod(op.asMethod)(2)//returns 5
+//Working reflection <3
+val op =typeOf[Int].declaration(newTermName(operatorAtString).encodedName).asTerm.alternatives(1) // 0 makes the operator behave like string, 1 makes it behave like a number
+val result = runtimeMirror(getClass.getClassLoader).reflect(firstNumber).reflectMethod(op.asMethod)(lastNumber)
+println(result)
