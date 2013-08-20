@@ -1,1 +1,2 @@
-println("Enter a phrase to count it words")
+println("Enter a phrase to count its words")
+val phrase: String = readLine()
