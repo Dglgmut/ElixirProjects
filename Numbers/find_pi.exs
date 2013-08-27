@@ -8,3 +8,4 @@ defmodule Math do
   end
 end
 
+IO.puts Math.generate_pi_until(20)
