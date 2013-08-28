@@ -11,3 +11,5 @@ defmodule Math do
     fibonacci(number-1) + fibonacci(number-2)
   end
 end
+
+IO.puts Math.fibonacci(4)
